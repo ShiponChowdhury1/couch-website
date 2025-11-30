@@ -1,6 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import logo from '../../public/categories/logo.png';
+import { Search } from "lucide-react";
+import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
+import profileImage from '../../public/transform/profile.jpg';
 export default function Navbar() {
   return (
     <header className="w-full bg-white shadow-sm">
@@ -20,9 +23,13 @@ export default function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
-          <Link href="/shop" className="hidden md:inline-flex items-center gap-2 rounded-full bg-amber-500 px-4 py-2 text-sm font-medium text-white">Shop</Link>
-          <button className="p-2 rounded-full bg-zinc-100">🔍</button>
+          <button className="p-2 rounded-full bg-zinc-100"><Search /></button>
           <button className="p-2 rounded-full bg-zinc-100">🛒</button>
+            <button className="p-2 rounded-full ">
+                 <Avatar>
+                     <AvatarImage src={profileImage.src} alt="Profile" className="w-8 h-8 rounded-full object-cover" />
+        </Avatar>
+            </button>
         </div>
       </div>
     </header>
