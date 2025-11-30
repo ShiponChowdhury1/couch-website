@@ -12,7 +12,7 @@ export default function Home() {
     <div className="min-h-screen bg-zinc-50 font-sans">
       <Navbar />
 
-      <main className="mx-auto max-w-7xl">
+      <main className="mx-auto max-w-7xl pt-20">
         <Banner />
         <ShopByCategories />
         <FeaturedItems />

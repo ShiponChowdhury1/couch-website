@@ -5,6 +5,9 @@ export interface Category {
   img: string;
 }
 
+
+
+
 // Categories Data
 export const categories: Category[] = [
   { id: 1, title: 'Sofa', img: '/categories/sofa.png' },

@@ -5,19 +5,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import sofaIcon from '../../public/categories/sofaIcon.png';
+import { categories } from "@/lib/data/categories";
 
 export default function ShopByCategories() {
-  const categories = [
-    { id: 1, title: 'Sofa', img: '/categories/sofa.png' },
-    { id: 2, title: 'Table', img: '/categories/table.png' },
-    { id: 3, title: 'Dining Chair', img: '/categories/diningChair.png' },
-    { id: 4, title: 'Bed', img: '/categories/bed.png' },
-    { id: 5, title: 'Desk', img: '/categories/desk.png' },
-    { id: 6, title: 'Dining Table', img: '/categories/diningTable.png' },
-    { id: 7, title: 'Cabinet', img: '/categories/cabinet.png' },
-    { id: 8, title: 'Wardrobe', img: '/categories/wardrobe.png' },
-    { id: 9, title: 'Accessories', img: '/categories/accessories.png' },
-  ];
+
 
   const settings = {
     dots: true,
@@ -83,7 +74,7 @@ export default function ShopByCategories() {
 
     {/* RIGHT SIDE — SLIDER */}
     <div className="w-[988px] h-[320px] category-slider">
-      <style jsx global>{`
+      <style dangerouslySetInnerHTML={{__html: `
         .category-slider .slick-prev,
         .category-slider .slick-next {
           width: 52px !important;
@@ -104,7 +95,7 @@ export default function ShopByCategories() {
         .category-slider .slick-next {
           right: -8px !important;
         }
-      `}</style>
+      `}} />
       <Slider {...settings}>
         {categories.map((category) => (
           <div key={category.id} className="px-2">

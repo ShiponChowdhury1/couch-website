@@ -6,7 +6,7 @@ import { Avatar, AvatarImage } from "@radix-ui/react-avatar";
 import profileImage from '../../public/transform/profile.jpg';
 export default function Navbar() {
   return (
-    <header className="w-full bg-white shadow-sm">
+    <header className="w-full bg-white shadow-sm fixed top-0 left-0 right-0 z-50">
       <div className="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-4">
           <Image src={logo} alt="Logo" width={40} height={40} />
