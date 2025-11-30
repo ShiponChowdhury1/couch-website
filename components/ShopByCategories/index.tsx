@@ -1,21 +1,22 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import sofaIcon from '../../public/categories/sofaIcon.png';
+
 export default function ShopByCategories() {
   const categories = [
-    { id: 1, title: 'Sofa', img: '/cat-sofa.png' },
-    { id: 2, title: 'Table', img: '/cat-table.png' },
-    { id: 3, title: 'Dining Chair', img: '/cat-chair.png' },
-    { id: 4, title: 'Bed', img: '/cat-bed.png' },
-    { id: 5, title: 'Desk', img: '/cat-desk.png' },
-    { id: 6, title: 'Storage', img: '/cat-storage.png' },
-    { id: 7, title: 'Lamp', img: '/cat-lamp.png' },
-    { id: 8, title: 'Bookshelf', img: '/cat-bookshelf.png' },
+    { id: 1, title: 'Sofa', img: '/categories/sofa.png' },
+    { id: 2, title: 'Table', img: '/categories/table.png' },
+    { id: 3, title: 'Dining Chair', img: '/categories/diningChair.png' },
+    { id: 4, title: 'Bed', img: '/categories/bed.png' },
+    { id: 5, title: 'Desk', img: '/categories/desk.png' },
+    { id: 6, title: 'Dining Table', img: '/categories/diningTable.png' },
+    { id: 7, title: 'Cabinet', img: '/categories/cabinet.png' },
+    { id: 8, title: 'Wardrobe', img: '/categories/wardrobe.png' },
+    { id: 9, title: 'Accessories', img: '/categories/accessories.png' },
   ];
 
   const settings = {
@@ -54,7 +55,7 @@ export default function ShopByCategories() {
   };
 
   return (
-   <section className="mx-auto max-w-7xl px-6 py-12 bg-[#F5F3EF]">
+   <section className="mx-auto max-w-7xl px-6 py-12 bg-[#FFF8ED]">
   <div className="flex items-start gap-32"> 
     {/* LEFT SIDE */}
     <div className="w-[292px] h-[272px]">
@@ -63,7 +64,7 @@ export default function ShopByCategories() {
         <h3 className="text-3xl font-bold">by categories</h3>
       </div>
 
-      <div className="flex items-center gap-2 mt-4">
+      <div className="flex items-center gap-4 mt-4">
         <div className="w-12 h-12 rounded-full flex items-center justify-center">
           <Image src={sofaIcon} alt="Sofa" width={80} height={80} />
         </div>
@@ -74,14 +75,36 @@ export default function ShopByCategories() {
       </div>
 
       <div className="mt-6">
-        <a href="/shop" className="text-zinc-700 hover:text-zinc-900 font-medium">
-          ALL CATEGORIES <span>→</span>
+        <a href="/shop" className="text-zinc-700 hover:text-zinc-900 font-medium ">
+          <span className="underline">ALL CATEGORIES</span> <span>→</span>
         </a>
       </div>
     </div>
 
     {/* RIGHT SIDE — SLIDER */}
-    <div className="w-[988px] h-[320px]">
+    <div className="w-[988px] h-[320px] category-slider">
+      <style jsx global>{`
+        .category-slider .slick-prev,
+        .category-slider .slick-next {
+          width: 52px !important;
+          height: 52px !important;
+          background-color: #333333 !important;
+          border-radius: 66px !important;
+          padding: 10px !important;
+          z-index: 10 !important;
+        }
+        .category-slider .slick-prev:before,
+        .category-slider .slick-next:before {
+          font-size: 20px !important;
+          color: #fff !important;
+        }
+        .category-slider .slick-prev {
+          left: -10px !important;
+        }
+        .category-slider .slick-next {
+          right: -8px !important;
+        }
+      `}</style>
       <Slider {...settings}>
         {categories.map((category) => (
           <div key={category.id} className="px-2">
